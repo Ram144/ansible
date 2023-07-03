@@ -1,0 +1,6 @@
+docker run -d \
+  --name my-logstash \
+  --mount type=bind,source=/home/ramsay/Documents/ansible/myconfig.conf,target=/usr/share/logstash/pipeline/myconfig.conf \
+  --mount type=bind,source=/home/ramsay/Documents/ansible/rejet.csv,target=/usr/share/logstash/data/rejet.csv \
+  docker.elastic.co/logstash/logstash:7.14.0
+

@@ -1,0 +1,16 @@
+---
+- name: Install ELK Stack
+  hosts: host1
+  gather_facts: no
+  become: yes
+  become_user: ramsay
+  become_method: sudo
+  tasks:
+    - name: Create ELK Docker Compose file
+      copy:
+        src: docker-compose.yml
+        dest: /home/ramsay/Documents/ansible/docker-compose.yml
+
+    - name: Start ELK Stack
+      command: docker-compose -f /home/ramsay/Documents/ansible/docker-compose.yml up -d
+

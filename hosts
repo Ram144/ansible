@@ -1,0 +1,11 @@
+[worker]
+192.168.239.132
+
+
+[worker:vars]
+ansible-ssh-private-key-file=~/.ssh/id_rsa_worker
+ansible-user=ramsay   
+ansible_ssh_pass=27006335
+
+[target_hosts]
+hostname ansible_ssh_pass=27006335
